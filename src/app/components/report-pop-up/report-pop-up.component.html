@@ -1,0 +1,19 @@
+<div  fxLayout="column">
+    <div class="standard-padding" fxLayout="row" fxLayoutAlign="end center"> 
+        <button mat-icon-button (click)="close()">
+            <mat-icon>
+                close
+            </mat-icon>
+        </button>
+    </div>
+    <div class="font-24 standard-padding" fxLayout="column" fxLayoutGap="16px">
+        <div>
+            PPM: {{data.ppm | number:'.0-0'}}
+        </div>
+        <div>
+            EPM: {{data.epm | number:'.0-0'}}
+        </div>
+
+    </div>
+    
+</div>

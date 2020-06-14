@@ -1,0 +1,40 @@
+<div class="view" fxLayout="column">
+    <div class="font-24 header standard-padding mat-elevation-z2" fxLayout="row" fxLayoutAlign="space-between center">
+        <button class="font-32" *ngIf="isRunning" mat-icon-button (click)="stop()">
+            <mat-icon>pause</mat-icon>
+        </button>
+        <button class="font-32" *ngIf="!isRunning" mat-icon-button (click)="startTimer()">
+            <mat-icon>play_arrow</mat-icon>
+        </button>
+        <div>
+            {{counter | date:'mm:ss.SS'}}
+        </div>
+        <button class="font-32" mat-icon-button (click)="reset()">
+            <mat-icon>refresh</mat-icon>
+        </button>
+    </div>
+    <div class="font-24" fxFlex fxLayout="column">
+        <div class="border-bottom" matRipple [matRippleColor]="'#D6FFEA'" fxLayout="row" fxLayoutAlign="center center"
+            fxFlex (click)="pass()">
+            <div class="above">
+                {{passCount}}
+            </div>
+        </div>
+        <div fxLayout="row" matRipple [matRippleColor]="'#EDABAC'" fxLayoutAlign="center center" fxFlex
+            (click)="error()">
+            <div class="above">
+                {{errorCount}}
+            </div>
+        </div>
+    </div>
+    <div class="standard-padding mat-elevation-z2" fxLayout="row" fxLayoutAlign="space-between center">
+        <div>
+            &copy; Bret Marshall
+        </div>
+        <button class="font-32" mat-icon-button (click)="runReport()">
+            <mat-icon>
+                speed
+            </mat-icon>
+        </button>
+    </div>
+</div>

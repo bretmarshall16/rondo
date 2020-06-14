@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body, .view {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.full-height {
+    height: 100%;
+}
+
+.full-width {
+    width: 100%;;
+}
+
+.standard-padding {
+    padding: 16px;
+}
+
+.a {
+    cursor: pointer;
+}
+
+.scroll {
+    overflow: auto;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.mat-icon, .mat-icon-button {
+    height: auto !important;
+    width: auto !important;
+}
+
+.font-24, .font-24 *{
+    font-size: 24px;
+}
+
+.font-32, .font-32 *{
+    font-size: 32px;
+}
+
+
