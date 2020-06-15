@@ -1,19 +1,26 @@
-<div  fxLayout="column">
-    <div class="standard-padding" fxLayout="row" fxLayoutAlign="end center"> 
+<div class="standard-padding" fxLayout="column">
+
+    <div class="font-24" fxLayout="row" fxLayoutAlign="space-between center">
+        <div>
+            RONDO REPORT
+        </div>
         <button mat-icon-button (click)="close()">
             <mat-icon>
                 close
             </mat-icon>
         </button>
     </div>
-    <div class="font-24 standard-padding" fxLayout="column" fxLayoutGap="16px">
+    <div class="standard-padding" fxLayout="column" fxLayoutGap="16px">
         <div>
-            PPM: {{data.ppm | number:'.0-0'}}
+            Passes/Min: {{data.ppm | number:'.0-1'}}
         </div>
         <div>
-            EPM: {{data.epm | number:'.0-0'}}
+            Error/Min: {{data.epm | number:'.0-1'}}
         </div>
-
+        <div>
+            Success Rate: {{data.cr | number:'.0-1'}}%
+        </div>
     </div>
-    
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+
 </div>
