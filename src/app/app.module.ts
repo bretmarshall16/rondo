@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CounterComponent } from './components/counter/counter.component';
 import { MaterialModule } from './material.module';
 import { ReportPopUpComponent } from './components/report-pop-up/report-pop-up.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { services } from './services';
 
 @NgModule({
   declarations: [
@@ -18,9 +21,10 @@ import { ReportPopUpComponent } from './components/report-pop-up/report-pop-up.c
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [services],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

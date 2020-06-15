@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ReportPopUpComponent } from '../report-pop-up/report-pop-up.component';
 import { error } from 'protractor';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { PwaService } from 'src/app/services/pwa.service';
 
 class Data {
   x: number;
@@ -38,7 +39,8 @@ export class CounterComponent implements OnInit, OnDestroy {
 
   constructor(
     private dialog: MatDialog,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar,
+    public Pwa: PwaService) { }
 
   ngOnInit(): void {
   }
@@ -153,6 +155,10 @@ export class CounterComponent implements OnInit, OnDestroy {
     this.snackBar.open(message, 'CLOSE', {
       duration: 2000,
     });
+  }
+
+  installPwa(): void {
+    this.Pwa.promptEvent.prompt();
   }
 
 

@@ -31,6 +31,9 @@
         <div>
             &copy;Bdmarsh
         </div>
+        <button mat-raised-button color="primary" *ngIf="Pwa.promptEvent" (click)="installPwa()">
+            Install
+        </button>
         <button class="font-32" mat-icon-button (click)="runReport()">
             <mat-icon>
                 speed
