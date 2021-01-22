@@ -22,7 +22,7 @@ import { services } from './services';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' }),
   ],
   providers: [services],
   bootstrap: [AppComponent]
